@@ -18,4 +18,16 @@ public class Player {
         this.id = idCount++;
         this.name = name;
     }
+
+    public void addPoint() {
+        this.score = this.score.sum();
+    }
+
+    public Boolean hasWon(Integer opponentScore) {
+        return this.score.getValue() >= opponentScore + 2;
+    }
+
+    public Boolean isDeuce(Integer opponentScore) {
+        return this.score.getValue().equals(3) && this.score.getValue().equals(opponentScore);
+    }
 }
