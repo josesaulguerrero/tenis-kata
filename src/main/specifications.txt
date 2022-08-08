@@ -1,0 +1,17 @@
+## Scoring system
+    - 0 points -> love.
+    - 1 point -> fifteen.
+    - 2 points -> thirty.
+    - 3 points -> forty.
+    - both players are on zero -> love-all.
+    - both players are on one -> fifteen-all.
+    - both players are on two -> thirty-all.
+    - both players are on three -> deuce.
+
+## Rules
+    - if both players are over three, then find out who is leading.
+    - a player wins when their score equals or is over their opponent's score plus two.
+
+## Methods
+    - wonPoint(): void -> sums up a point to the player score.
+    - getScore(): String -> returns a string with the calculated score.
