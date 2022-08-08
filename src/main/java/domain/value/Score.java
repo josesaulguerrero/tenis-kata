@@ -21,6 +21,10 @@ public class Score {
     // ---
     private Integer value;
 
+    public Score sum() {
+        return new Score(this.value + 1);
+    }
+
     public static Score of(Integer value) {
         return new Score(value);
     }
