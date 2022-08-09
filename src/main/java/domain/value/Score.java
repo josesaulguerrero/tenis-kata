@@ -31,6 +31,10 @@ public class Score {
         return new Score();
     }
 
+    public boolean isGreaterThanOrEquals(Integer value) {
+        return this.value >= value;
+    }
+
     public static boolean isDeuce(Score localScore, Score opponentScore) {
         return localScore.getValue() >= 3 && localScore.equals(opponentScore);
     }

@@ -24,7 +24,7 @@ public class Player {
     }
 
     public Boolean hasWon(Integer opponentScore) {
-        return this.score.getValue() >= opponentScore + 2;
+        return this.score.isGreaterThanOrEquals(4) && this.score.isGreaterThanOrEquals(opponentScore + 2);
     }
 
     public String parseScore(Integer opponentScore) {
