@@ -27,7 +27,7 @@ public class Player {
         return this.score.getValue() >= opponentScore + 2;
     }
 
-    public Boolean isDeuce(Integer opponentScore) {
-        return this.score.getValue() >= 3 && this.score.getValue().equals(opponentScore);
+    public String parseScore(Integer opponentScore) {
+        return this.score.parse(Score.of(opponentScore));
     }
 }

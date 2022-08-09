@@ -31,11 +31,20 @@ public class Score {
         return new Score();
     }
 
-    public Boolean greaterThanOrEquals(Integer value) {
-        return this.value >= value;
+    private boolean isDeuce(Score opponentScore) {
+        return this.value >= 3 && this.equals(opponentScore);
     }
 
-    public String parse() {
-        return possibleScores.get(this.value);
+    public String parse(Score opponentScore) {
+        String localScoreParsed = possibleScores.get(this.value);
+        String opponentScoreParsed = possibleScores.get(opponentScore.getValue());
+
+        String parsedScore = this.equals(opponentScore)
+                ? localScoreParsed + "-All"
+                : localScoreParsed + "-" + opponentScoreParsed;
+        if (isDeuce(opponentScore)) {
+            parsedScore = "Deuce";
+        }
+        return parsedScore;
     }
 }
