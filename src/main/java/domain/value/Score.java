@@ -31,8 +31,8 @@ public class Score {
         return new Score();
     }
 
-    private boolean isDeuce(Score opponentScore) {
-        return this.value >= 3 && this.equals(opponentScore);
+    public static boolean isDeuce(Score localScore, Score opponentScore) {
+        return localScore.getValue() >= 3 && localScore.equals(opponentScore);
     }
 
     public String parse(Score opponentScore) {
@@ -42,7 +42,7 @@ public class Score {
         String parsedScore = this.equals(opponentScore)
                 ? localScoreParsed + "-All"
                 : localScoreParsed + "-" + opponentScoreParsed;
-        if (isDeuce(opponentScore)) {
+        if (Score.isDeuce(this, opponentScore)) {
             parsedScore = "Deuce";
         }
         return parsedScore;
