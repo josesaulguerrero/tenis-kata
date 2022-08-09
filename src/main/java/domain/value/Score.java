@@ -33,7 +33,7 @@ public class Score {
         return new Score();
     }
 
-    public Boolean greaterThan(Integer value) {
+    public Boolean greaterThanOrEquals(Integer value) {
         return this.value >= value;
     }
 
