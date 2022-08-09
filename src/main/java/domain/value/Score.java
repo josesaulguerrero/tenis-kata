@@ -12,12 +12,12 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Score {
-    private static final Map<Integer, String> possibleScores = new HashMap<>() {{
-        put(0, "Love");
-        put(1, "Fifteen");
-        put(2, "Thirty");
-        put(3, "Forty");
-    }};
+    private static final Map<Integer, String> possibleScores = Map.of(
+            0, "Love",
+            1, "Fifteen",
+            2, "Thirty",
+            3, "Forty"
+    );
     // ---
     private Integer value;
 
