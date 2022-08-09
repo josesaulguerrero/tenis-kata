@@ -16,6 +16,7 @@ public class Player {
     public Player(String name) {
         this.id = idCount++;
         this.name = name;
+        this.score = Score.of(0);
     }
 
     public void addPoint() {
