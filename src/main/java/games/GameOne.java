@@ -28,14 +28,42 @@ public class GameOne implements TennisGame {
         player.addPoint();
     }
 
-    private boolean playersScoreAreEqual() {
-        return this.playerOne.getScore().equals(
-                this.playerTwo.getScore()
-        );
+    private boolean someoneHasWon() {
+        int playerOneScore = this.playerOne.getScore().getValue();
+        int playerTwoScore = this.playerTwo.getScore().getValue();
+        return this.playerOne.hasWon(playerTwoScore) || this.playerTwo.hasWon(playerOneScore);
+    }
+    private Player findWinner() {
+        return this.playerOne.hasWon(this.playerTwo.getScore().getValue())
+                ? this.playerOne
+                : this.playerTwo;
+    }
+
+    private boolean someoneIsLeading() {
+        int playerOneScore = this.playerOne.getScore().getValue();
+        int playerTwoScore = this.playerTwo.getScore().getValue();
+        return this.playerOne.isLeading(playerTwoScore) || this.playerTwo.isLeading(playerOneScore);
+    }
+
+    private Player findLeader() {
+        return this.playerOne.isLeading(this.playerTwo.getScore().getValue())
+                ? this.playerOne
+                : this.playerTwo;
     }
 
     public String getScore() {
-        Integer playerTwoScore = this.playerTwo.getScore().getValue();
-        return this.playerOne.parseScore(playerTwoScore);
+        String gameScore = Player.parseScore(
+                this.playerOne.getScore().getValue(),
+                this.playerTwo.getScore().getValue()
+        );
+        if (someoneHasWon()) {
+            Player winner = this.findWinner();
+            gameScore = "Win for " + winner.getName();
+        }
+        if (someoneIsLeading()) {
+            Player leader = this.findLeader();
+            gameScore = "Advantage " + leader.getName();
+        }
+        return gameScore;
     }
 }
