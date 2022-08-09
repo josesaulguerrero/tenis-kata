@@ -30,7 +30,7 @@ public class Player {
     public boolean isLeading(int opponentScore) {
         boolean bothPlayersScoreIsOverThree = Score.of(opponentScore).isGreaterThanOrEquals(3) && this.score.isGreaterThanOrEquals(3);
         boolean localPlayerIsLeading = this.score.isGreaterThanOrEquals(opponentScore + 1);
-        return bothPlayersScoreIsOverThree && localPlayerIsLeading;
+        return bothPlayersScoreIsOverThree && localPlayerIsLeading && !this.hasWon(opponentScore);
     }
 
     public static String parseScore(int localScore, int opponentScore) {
