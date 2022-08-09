@@ -4,7 +4,6 @@ import domain.value.Score;
 import lombok.*;
 
 @Getter
-@Setter
 @ToString
 @EqualsAndHashCode
 public class Player {

@@ -2,11 +2,9 @@ package domain.value;
 
 import lombok.*;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Getter
-@Setter
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
