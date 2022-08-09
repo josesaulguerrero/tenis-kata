@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import games.GameOne;
-import games.GameTwo;
-import games.GameThree;
 import interfaces.TennisGame;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -87,7 +85,7 @@ public class TennisTest {
         checkAllScores(game);
     }
 
-    @Test
+    /*@Test
     public void checkAllScoresTennisGame2() {
         GameTwo game = new GameTwo("player1", "player2");
         checkAllScores(game);
@@ -97,6 +95,6 @@ public class TennisTest {
     public void checkAllScoresTennisGame3() {
         GameThree game = new GameThree("player1", "player2");
         checkAllScores(game);
-    }
+    }*/
 
 }
