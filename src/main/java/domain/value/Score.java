@@ -33,6 +33,10 @@ public class Score {
         return new Score();
     }
 
+    public Boolean greaterThan(Integer value) {
+        return this.value >= value;
+    }
+
     public String parse() {
         return possibleScores.get(this.value);
     }
