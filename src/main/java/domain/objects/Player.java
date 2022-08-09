@@ -28,6 +28,6 @@ public class Player {
     }
 
     public Boolean isDeuce(Integer opponentScore) {
-        return this.score.getValue().equals(3) && this.score.getValue().equals(opponentScore);
+        return this.score.getValue() >= 3 && this.score.getValue().equals(opponentScore);
     }
 }
