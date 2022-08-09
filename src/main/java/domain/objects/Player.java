@@ -23,11 +23,17 @@ public class Player {
         this.score = this.score.sum();
     }
 
-    public Boolean hasWon(Integer opponentScore) {
+    public boolean hasWon(int opponentScore) {
         return this.score.isGreaterThanOrEquals(4) && this.score.isGreaterThanOrEquals(opponentScore + 2);
     }
 
-    public String parseScore(Integer opponentScore) {
-        return this.score.parse(Score.of(opponentScore));
+    public boolean isLeading(int opponentScore) {
+        boolean bothPlayersScoreIsOverThree = Score.of(opponentScore).isGreaterThanOrEquals(3) && this.score.isGreaterThanOrEquals(3);
+        boolean localPlayerIsLeading = this.score.isGreaterThanOrEquals(opponentScore + 1);
+        return bothPlayersScoreIsOverThree && localPlayerIsLeading;
+    }
+
+    public static String parseScore(int localScore, int opponentScore) {
+        return Score.of(localScore).parse(Score.of(opponentScore));
     }
 }
